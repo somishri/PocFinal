@@ -1,0 +1,10 @@
+#sticky-footer {
+    flex-shrink: none;
+  }
+  /* .container
+  {
+    padding-right: 663px;
+  } */
+  .bg-light {
+    background-color: antiquewhite;
+}

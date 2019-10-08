@@ -1,0 +1,35 @@
+<div class="container">
+<div class="col-md-3">
+    <div class="profile-sidebar">
+    <div class="profile-userpic">
+        <img src="https://www.stickpng.com/assets/images/585e4bcdcb11b227491c3396.png"class="img-responsive" style="width: 100px;height: 100px;">
+    </div>
+    <div *ngIf="user">
+    <form (ngSubmit)="UpdateProfile(f)" #f=ngForm>
+        <label>FirstName:</label>
+        <br>
+        <input type="text" name="fname" [(ngModel)="user.firstname">
+        <br>
+        <br>
+        <label>LastName:</label>
+        <br>
+        <input type="text" name="lname"  [(ngModel)="user.lastname">
+        <br>
+        <br>
+        <label>Email:</label>
+        <br>
+        <input type="email" name="mail" [(ngModel)]="user.email">
+        <br>
+        <br>
+        <label>PhoneNo:</label>
+        <br>
+        <input type="number" name="pnumber" [(ngModel)]="user.phoneno">
+        <br>
+        <br>
+        <button class="btn btn-success" type="submit">Update</button>
+
+    </form>
+</div>
+</div>
+</div>
+</div>

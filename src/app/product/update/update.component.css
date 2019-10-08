@@ -1,0 +1,9 @@
+.container
+{
+    text-align: center;
+    background-color: antiquewhite;
+    box-shadow: 9px 30px 27px antiquewhite;
+}
+label{
+    font-weight: bold
+}

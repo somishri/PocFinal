@@ -1,0 +1,42 @@
+
+<div class="container">
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Remove</th>
+      <th scope="col">AddItems</th>
+     
+    </tr>
+  </thead>
+    <tbody *ngFor="let cart of carts">
+      <tr>
+        <td>{{cart.name}}</td>
+        <td>{{cart.price}}</td>
+        <td> {{cart.quantity}} </td>
+        <td>{{cart.amount}}</td>
+        <td (click)="delete(cart.cartId)"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+        <td  (click)="addToCart(cart)"><i class="fa fa-plus" aria-hidden="true"></i></td>
+       
+      </tr>
+     
+    </tbody>
+    <tr>
+     
+        <td colspan="5"></td>
+      
+        <td><div><strong>Total {{cartTotal}}</strong></div></td>
+          
+<tr>
+ 
+  <td colspan="5"><button class="btn-success"  [routerLink]="['/home']"  routerLinkActive="router-link-active">Back to home</button></td>
+  <td><button *ngIf="displayButton" class="btn-success" [routerLink]="['/orderplace']"  routerLinkActive="router-link-active">Place Order</button>
+  </td>
+</tr>
+</table>
+
+</div>

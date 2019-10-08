@@ -1,0 +1,63 @@
+
+.fa-envelope
+{
+    position: absolute;
+    top: 135px;
+    padding: 16px;
+    font-size: 24px;
+    color: white;
+ }
+ .fa-unlock
+ {
+   position: absolute;
+   top: 211px;
+   padding: 17px;
+   font-size: 26px;  
+   color: white;
+ }
+ .form-control
+ {
+   display: initial;
+   width: 100%;
+   height: 60px;
+   padding: 13px 14px;
+   font-size: 14px;
+   line-height: 4.428571;
+   color:black;
+   background-color: #fff;
+   background-image: none;
+   border: 1px solid #ccc;
+   border-radius: 33px;
+   border-left: 46px solid;
+       font-weight: bold;
+ }
+ .container
+ {
+     background-color:#868bb980;
+     width: 430px;
+     align-content: center;
+     margin: 76px auto;
+     padding: 22px;
+     box-shadow: 0px 28px 29px black;
+ }
+ .page-header
+ {
+       padding-bottom: 9px;
+       margin: 40px 0 20px;
+       
+ }
+ .btn-primary
+ {
+   color:white;
+   background-color:black;
+   border-color: black;
+   font-weight: bold;
+   margin:0px 10px;
+}
+ .bg
+ {
+   background-image: url('http://wallpapersprinted.com/download/2/pink_shopping_bag_tropical_monstera_leaf_marble-wallpaper-3840x2400.jpg');
+  
+   height: 700px;
+   margin-top: -76px;
+ }

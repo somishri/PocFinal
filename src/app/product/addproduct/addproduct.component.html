@@ -1,0 +1,70 @@
+<!-- Material form contact -->
+<body >
+    <div class="card">
+
+    <h5 class="card-header bg-dark">
+        <strong style="color: white">Add Product</strong>
+    </h5>
+
+    <!--Card content-->
+    <div class="container">
+
+        <!-- Form -->
+        <form class="text-center" style="color: #757575;"  (ngSubmit)="addProduct(f)" #f=ngForm>
+          
+            <!-- Name -->
+            <div class="md-form mt-3">
+                    <label for="materialContactFormName">Name</label>
+                <input type="text"  name="name" ngModel class="form-control">
+               
+            </div>  <div class="md-form">
+                    <label for="materialContactFormMessage">Description</label>
+                <textarea id="materialContactFormMessage" name="description" class="form-control md-textarea" rows="3" ngModel></textarea>
+              
+            </div>
+            <div class="md-form">
+                <label>Category</label>
+                <br>
+                <select class="mdb-select" name="catId" ngModel>
+                    <option *ngFor = "let cat of data1" [value]="cat.catId">{{cat.catNamr}}</option>
+                    
+                </select> </div>
+           
+            <!-- E-mail -->
+            <div class="md-form">
+                    <label >Price</label>
+                <input type="number"  class="form-control" ngModel name="price">
+               
+            </div>
+            <div class="md-form">
+                    <label >Discount</label>
+                <input type="text"  class="form-control" ngModel name="discount">
+               
+            </div>
+            <div class="md-form">
+                    <label >discountPrice</label>
+                <input type="number"  class="form-control" ngModel name="DsicountPrice">
+               
+            </div>
+            <div class="md-form">
+                    <label >Image</label>
+                <input type="text"  class="form-control" ngModel name="proImage">
+             
+            </div>
+           
+            <div class="md-form">
+                    <label >Quantity</label>
+                <input type="number"  class="form-control" ngModel name="quantity">
+             
+            </div>
+           <br>
+            <button class="btn btn-success" style="width: 100%" type="submit">Send</button>
+
+        </form>
+
+
+    </div>
+
+</div>
+<!-- Material form contact -->
+</body>

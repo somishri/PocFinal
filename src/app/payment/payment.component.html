@@ -1,0 +1,74 @@
+ <br>
+<div class="container">
+        <form (ngSubmit)="addPayment(f)" #f=ngForm>
+    <h3 style="text-align: center">Payments:</h3>
+    <label for="fname" style="text-align: center">Accepted Cards</label>
+    <div class="icon-container"style="text-align: center">
+        <i class="fa fa-cc-visa" style="color:navy;"></i>
+        <i class="fa fa-cc-amex" style="color:blue;"></i>
+        <i class="fa fa-cc-mastercard" style="color:red;"></i>
+        <i class="fa fa-cc-discover" style="color:orange;"></i>
+    </div>
+    
+    <div class="row">
+       
+        <div class="col-md-6">
+                <input type="text"  [(ngModel)]="cusId  " name="cusId" style="display: none">
+
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="CustomerName" placeholder="Enter your name on card" ngModel required minlength="3" #cname=ngModel>
+            <div *ngIf="cname.invalid">
+                    <div *ngIf="cname.errors.minlength">
+                      enter proper fullname
+                    </div>
+                    <div *ngIf="cname.invalid && cname.touched">
+                      <div *ngIf="cname.errors.required">
+                        Hello enter your fullname
+                      </div>
+                      <div *ngIf="touched">
+                         enter valid fullname
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+    
+        <div class="col-md-6">
+            <label for="cname">Card Number</label>
+            <input type="text" id="cnumber"  name="cardnumber" placeholder="xxxx-xxxx-xxxx"ngModel required maxlength="12" #cnumber=ngModel>
+            <div *ngIf="cnumber.invalid">
+                    <div *ngIf="cnumber.errors.maxlength">
+                      enter proper AccountNumber
+                    </div>
+                    <div *ngIf="cnumber.invalid && cname.touched">
+                      <div *ngIf="cnumber.errors.required">
+                        Hello enter your AccountNumber
+                      </div>
+                      <div *ngIf="touched">
+                         enter valid AccountNumber
+                      </div>
+                    </div>
+                  </div>
+
+        </div>
+        <div class="col-md-4">
+                <label for="expmonth">Exp Date</label>
+                <input type="month" id="expmonth" name="expmonth" 
+                placeholder="September"ngModel   min="2017-06" max="2050-09" required
+                >
+            </div>
+
+    
+            <div class="col-md-4">
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" name="cvv" placeholder="352" ngModel>
+            </div>
+            <div class="col-md-12">
+                    
+                    <input type="submit"  [disabled]='!f.valid' value="PlaceOrder" class="btn btn-success" >
+              
+                </div>
+          
+        </div>
+    </form>
+    </div>

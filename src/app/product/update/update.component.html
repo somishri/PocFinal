@@ -1,0 +1,59 @@
+<div class="container">
+<form  (ngSubmit)="updateProduct(f)" #f=ngForm>
+    <div *ngIf="product">
+     <br>
+     <label>Category</label>
+     <br>
+     <select (click)="getCat()" [(ngModel)]=product.catId name="catId" id="">
+         <option *ngFor="let c of data1" [value]="c.catId">
+             {{c.catNamr}}
+         </option>
+     </select>
+     
+     <br>
+     <input type="hidden" name="id" [(ngModel)]=product.id>
+     
+     <br>
+     <br>
+     <label>ProductName</label>
+     <br>
+     <input type="text" class="form-control" name="name" [(ngModel)]=product.name >
+     <br>
+     <label>Image</label>
+     <br>
+     <input type="text" name="proImage" [(ngModel)]=product.proImage class="form-control">
+     <br>
+     <br>
+     <label>Description</label>
+     <br>
+     <input type="text" name="description" [(ngModel)]=product.description class="form-control"> 
+     <br>
+     <label>Quantity</label>
+     <br>
+     <input type="number" name="quantity" [(ngModel)]=product.quantity class="form-control">
+     <br>
+     <label>DiscountPrice</label>
+     <br>
+     <input type="number" name="discountPrice" [(ngModel)]=product.dsicountPrice class="form-control">
+     <br>
+     <br>
+     <label>Discount</label>
+     <br>
+     <input type="text" name="discount" [(ngModel)]=product.discount class="form-control">
+     <br>
+     <br>
+     <label>Price</label>
+     <br>
+     <input type="number" name="price" [(ngModel)]=product.price class="form-control">
+     <br>
+   <!-- <label>Discount</label>
+     <br>
+     <input type="text" name="discount" [(ngModel)]=product.discount>
+     <br>
+     <br> -->
+     
+     <br>
+     <button type="submit"  class="btn btn-success" style="width: 100%">update</button>
+    </div>
+ </form>
+</div>

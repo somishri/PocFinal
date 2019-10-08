@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form (ngSubmit)="addOrder(f)" #f=ngForm>
+        <div class="row">
+          <div class="col-50">
+            <h3>Shipping Address</h3>
+            <input type="text" [(ngModel)]="cusId  " name="cusId" style="display: none">
+            <label for="fname"><i class="fa fa-user"></i><strong>Full Name</strong> </label>
+            <input type="text" id="fname" name="fullName" placeholder="enter your fullname" ngModel required
+              #name=ngModel>
+            <div *ngIf="name.invalid">
+              <div *ngIf="name.errors.minlength">
+                enter proper fullname
+              </div>
+              <div *ngIf="name.invalid && name.touched">
+                <div *ngIf="name.errors.required">
+                  Hello enter your fullname
+                </div>
+                <div *ngIf="touched">
+                  enter valid fullname
+                </div>
+              </div>
+            </div>
+
+            <label for="email"><i class="fa fa-envelope"></i> <strong>Email</strong></label>
+            <input type="text" id="email" name="email" placeholder="enter your email" ngModel required email
+              #mail=ngModel>
+            <div *ngIf="mail.invalid && mail.touched">
+              <div *ngIf="mail.errors.required">
+                Hello enter your email
+              </div>
+              <div *ngIf="touched">
+                enter valid
+              </div>
+              <div *ngIf="mail.errors.email">
+                enter valid email
+              </div>
+            </div>
+
+
+            <label for="adr"><i class="fa fa-address-card-o"></i><strong>Address</strong></label>
+            <input type="text" id="adr" name="address" placeholder="enter your address" ngModel>
+            <label for="city"><i class="fa fa-institution"></i> <strong>City</strong></label>
+            <input type="text" id="city" name="city" placeholder="enter your City" ngModel>
+
+            <div class="row">
+
+              <div class="col-50">
+                <label for="zip"><strong>State</strong></label>
+                <input type="text" id="zip" name="state" placeholder="enter your State" ngModel>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input type="submit" [disabled]='!f.valid' value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+</div>

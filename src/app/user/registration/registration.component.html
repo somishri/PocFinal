@@ -1,0 +1,99 @@
+<div class="bg">
+<div class="container">
+    <h4 style="color: black">Register Here!!!</h4>
+    <form (ngSubmit)="addUser(f)" #f=ngForm>
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter your FirstName" ngModel name="firstName" required minlength="3" #namev=ngModel >
+        <div *ngIf="namev.invalid" style="color: red">
+            <div *ngIf="namev.errors.minlength">
+               <strong>enter proper name</strong> 
+            </div>
+            <div *ngIf="namev.invalid && namev.touched">
+                <div *ngIf="namev.errors.required">
+                   <strong>Hello enter your name</strong> 
+                </div>
+                <div *ngIf="touched">
+                  <strong> enter valid name</strong> 
+                </div>
+               
+                </div>
+           
+            </div>  
+        <br>
+            
+        <input type="text" class="form-control" placeholder="Enter your LasttName" ngModel name="lastName" required minlength="4" #lname=ngModel>
+        <div *ngIf="lname.invalid" style="color: red">
+            <div *ngIf="lname.errors.minlength">
+               <strong >enter proper lastname</strong> 
+            </div>
+            <div *ngIf="lname.invalid && lname.touched">
+                <div *ngIf="lname.errors.required">
+                   <strong>Hello enter your lastname</strong> 
+                </div>
+                <div *ngIf="touched">
+                    enter valid lastname
+                </div>
+               
+                </div>
+           
+            </div> 
+        <br>
+       
+       
+            <input type="text" class="form-control" placeholder="Enter your email" ngModel name="email" required  email #emval=ngModel>
+            <div *ngIf="emval.invalid && emval.touched"  style="color: red">
+            <div *ngIf="emval.errors.required">
+               <strong> Hello enter your email
+</strong>            </div>
+            <div *ngIf="touched">
+               <strong> enter valid
+           </strong> </div>
+            <div *ngIf="emval.errors.email">
+               <strong> enter valid email
+     </strong>       </div>
+            </div>
+            
+        
+        <br>
+        <br>
+             <input type="number" class="form-control" placeholder="Enter your Mobile No" ngModel name="phoneNumber" required #phone=ngModel>
+
+             <div *ngIf="phone.invalid && phone.touched" style="color: red">
+                <div *ngIf="phone.errors.required">
+                   <strong> Hello enter your phoneN</strong>umber
+                </div>
+                <div *ngIf="touched">
+                   <strong> enter valid phoneNumber</strong>
+                </div>
+               
+                </div>
+           
+        
+        <br>
+        <br>
+       
+        <input type="password" class="form-control" placeholder="Enter your password" ngModel name="password" required minlength="8" #pass=ngModel>
+        <div *ngIf="pass.invalid" style="color: red">
+            <div *ngIf="pass.errors.minlength">
+               <strong> enter proper password
+ </strong>           </div>
+            <div *ngIf="pass.invalid && pass.touched">
+                <div *ngIf="pass.errors.required">
+                   <strong> Hello enter your passwo</strong>rd
+                </div>
+                <div *ngIf="touched">
+                   <strong> enter valid password
+  </strong>              </div>
+               
+                </div>
+           
+            </div>  
+        
+        <br>
+        <br>
+        </div>
+        
+        <button class="btn btn-primary" type="submit" [routerLink]="['/user']" routerLinkActive="router-link-active">SignUp</button>
+    </form>
+</div>
+</div>

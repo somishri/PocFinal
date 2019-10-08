@@ -1,0 +1,73 @@
+<div class="wrapper">
+
+   <div id="content">
+
+    <nav class="navbar navbar-expand-lg ">
+      <div class="container-fluid">
+
+     
+       <a [routerLink]="['/add-product']"  routerLinkActive="router-link-active"  style="font-weight: bolder"> Add-Product</a>
+       &nbsp;
+       &nbsp;
+       &nbsp;
+
+       <a [routerLink]="['/home']"  routerLinkActive="router-link-active"  style="font-weight: bolder" >Home</a>
+
+        <div class="collapse navbar-collapse navbar-right" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+ 
+          <li class="nav-item">
+                <div class="dropdown">
+                  <a data-toggle="dropdown">
+                    <i class="fa fa-user fa-2x" style="padding-top: 11px; width: 1066px;" aria-hidden="true" ></i>
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#"><strong>Hello:Admin</strong></a>
+                    <a class="dropdown-item" *ngIf="!role" [routerLink]="['/user']" routerLinkActive="router-link-active">
+                      <i class="fa fa-sign-in"><strong>login</strong></i></a>
+                    <a class="dropdown-item"   [routerLink]="['/home']"><strong> Edit-Profile</strong></a>
+                    <a class="dropdown-item" [routerLink]="['/user']" *ngIf="role" routerLinkActive="router-link-active">
+                      <i (click)="logout()" class="fa fa-sign-out"><strong>logout</strong></i></a>
+                  </div>
+                </div>
+              </li>
+              &nbsp;
+              &nbsp;
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <br>
+<div class="row">
+  <table class="table table-bordered"  >
+    <thead>
+      <tr >
+        <th><strong>Name</strong></th>
+        <th><strong>Image</strong></th>
+        <th><strong>Description</strong></th>
+        <th><strong>Discount</strong></th>
+        <th><strong>DiscountPrice</strong></th>
+        <th><strong>Price</strong></th>
+        <th><strong>Delete</strong></th>
+        <th><strong>Update</strong></th>
+        <th><strong>Quantity</strong></th>
+
+      </tr>
+    </thead>
+    <tbody style="padding: 5px">
+      <tr *ngFor="let pro of data">
+        <td> {{pro.name}}</td>
+        <td><img [src]="pro.proImage" style="width: 50px; height: 50px;"></td>
+           <td >{{pro.description}}</td>
+            <td> {{pro.discount}}</td>
+           <td>{{pro.dsicountPrice}}</td>
+           <td> {{pro.price}}</td>
+           <td type="submit"class="btn btn-success" (click)="onDelete(pro.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+           <td [routerLink]="['/update/',pro.id]"  routerLinkActive="router-link-active" ><i class="fa fa-pencil-square" aria-hidden="true"></i></td>
+            <td>{{pro.quantity}}</td>
+          </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>
